@@ -1,5 +1,5 @@
 def maximizar_troca_de_figurinhas(figurinhas_da_maria, figurinhas_do_joao):
-    cont = 0
+  cont = 0
   tem = False
   if (len(figurinhas_da_maria) >= len(figurinhas_do_joao)):
     for i in range(len(figurinhas_do_joao)):
@@ -29,7 +29,7 @@ def maximizar_troca_de_figurinhas(figurinhas_da_maria, figurinhas_do_joao):
       cont = cont + 1
 
   
-    return cont
+  return cont
 
 
 
