@@ -1,23 +1,33 @@
 def maximizar_troca_de_figurinhas(figurinhas_da_maria, figurinhas_do_joao):
   cont = 0
   tem = False
-  if (len(figurinhas_da_maria) >= len(figurinhas_do_joao)):
-    for i in range(len(figurinhas_do_joao)):
-      for j in range(len(figurinhas_da_maria)):
-        if (figurinhas_do_joao[i] == figurinhas_da_maria[j]):
-          tem = True
+  qtd = 0
 
-      if (tem == False):
-        cont = cont + 1
+  if (len(figurinhas_da_maria) >= len(figurinhas_do_joao)):
+    qtdJoao = sorted(set(figurinhas_do_joao))
+
+    while figurinhas_da_maria != figurinhas_do_joao:
+      qtd = len(figurinhas_do_joao)
+      break
+
+    for i in range(len(qtdJoao)):
+      for j in range(len(figurinhas_da_maria)):
+        if (qtdJoao[i] == figurinhas_da_maria[j]):
+          cont = cont + 1
+          qtd = len(qtdJoao) - cont
 
   elif (len(figurinhas_da_maria) <= len(figurinhas_do_joao)):
-    for i in range(len(figurinhas_da_maria)):
-      for j in range(len(figurinhas_do_joao)):
-        if (figurinhas_da_maria[i] == figurinhas_do_joao[j]):
-          tem = True
+    qtdMaria = sorted(set(figurinhas_da_maria))
 
-      if (tem == False):
-        cont = cont + 1
+    while figurinhas_da_maria != figurinhas_do_joao:
+      qtd = len(figurinhas_da_maria)
+      break
+
+    for i in range(len(qtdMaria)):
+      for j in range(len(figurinhas_do_joao)):
+        if (qtdMaria[i] == figurinhas_do_joao[j]):
+          cont = cont + 1
+          qtd = len(qtdMaria) - cont
 
   else:
     for i in range(0, len(figurinhas_da_maria)):
@@ -28,9 +38,7 @@ def maximizar_troca_de_figurinhas(figurinhas_da_maria, figurinhas_do_joao):
     if (tem == False):
       cont = cont + 1
 
-  
-  return cont
-
+  return qtd
 
 
 if __name__ == '__main__':
